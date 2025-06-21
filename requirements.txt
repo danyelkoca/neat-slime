@@ -1,0 +1,21 @@
+numpy
+networkx
+psutil
+
+## For cartpole
+gymnasium
+
+## For slime volley
+gym==0.26.2  # For running the original (old) SlimeVolley environment (slimevolley.py)
+opencv-python==4.11.0.86
+
+
+## For visulziing slimevoleey
+evojax==0.2.17
+imageio==2.37.0
+
+# try neat-python. not needed for manual near implementation
+neat-python==0.92  # Only needed for neat_lib_* example scripts
+
+
+# Successfully installed graphviz-0.21
