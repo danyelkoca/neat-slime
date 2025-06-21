@@ -1,3 +1,5 @@
+import os
+import argparse
 import pickle
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -301,12 +303,31 @@ def visualize_topology(genome, save_path):
     plt.close()
 
 
-GENOME_PATH = ()
 if __name__ == "__main__":
-    genome_path = "models/slime_1038.pkl"
-    save_path = "results/slime_1038_topology.png"
+    parser = argparse.ArgumentParser(description="Visualize NEAT network topology")
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="models/slime_1038.pkl",
+        help="Path to the model file",
+    )
+    parser.add_argument(
+        "--output",
+        type=str,
+        default=None,
+        help="Path to save the topology image (default: results/model_name_topology.png)",
+    )
+    args = parser.parse_args()
 
-    genome = load_genome(genome_path)
+    # Set default output path if not provided
+    if args.output is None:
+        model_name = os.path.splitext(os.path.basename(args.model))[0]
+        args.output = f"results/{model_name}_topology.png"
+
+    # Ensure results directory exists
+    os.makedirs(os.path.dirname(args.output), exist_ok=True)
+
+    genome = load_genome(args.model)
     genome = clean_genome(genome)  # Clean before visualizing
-    visualize_topology(genome, save_path)
-    print(f"[INFO] Topology image saved to {save_path}")
+    visualize_topology(genome, args.output)
+    print(f"[INFO] Topology image saved to {args.output}")

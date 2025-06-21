@@ -1,7 +1,3 @@
-"""
-Example NEAT implementation for SlimeVolley using neat-python.
-"""
-
 import os
 import sys
 
@@ -16,6 +12,13 @@ from concurrent.futures import ProcessPoolExecutor
 from slimevolley import SlimeVolleyEnv
 import json
 
+# Directory paths
+MODELS_DIR = "models"
+LOGS_DIR = "logs"
+
+# Create directories if they don't exist
+os.makedirs(MODELS_DIR, exist_ok=True)
+os.makedirs(LOGS_DIR, exist_ok=True)
 
 # Configurable parameters
 MAX_GENERATIONS = 2000  # Number of generations to run NEAT
@@ -166,11 +169,11 @@ def run_slimevolley():
         models[generation] = best
         if generation % 10 == 0 or generation == MAX_GENERATIONS - 1:
             for key, model in models.items():
-                model_path = f"models/slime_{key}.pkl"
+                model_path = os.path.join(MODELS_DIR, f"slime_{key}.pkl")
                 with open(model_path, "wb") as f:
                     pickle.dump(model, f)
 
-            metrics_path = f"logs/slime_{generation}.json"
+            metrics_path = os.path.join(LOGS_DIR, f"slime_{generation}.json")
             with open(metrics_path, "w") as f:
                 json.dump(metrics, f, indent=2)
             print(

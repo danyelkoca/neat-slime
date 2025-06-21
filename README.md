@@ -6,8 +6,9 @@ Feed-forward NEAT implementation that successfully learns to play Slime Volley u
 2. Advanced training with random ball starts and pure score-based rewards to master competitive gameplay
 
 The agent learns to play using only a feed-forward neural network (no recurrence needed). The drop in fitness around generation 200 shows the curriculum shift to harder scenarios, after which the agent adapts to become a robust player.
+We use parallel training with 8 workers to speed up the process so that training is completed in about 2 hours.
 
-![Gameplay](results/genome_1308.gif)
+![Gameplay](results/slime_1308_play.gif)
 
 ## Training Progress
 
