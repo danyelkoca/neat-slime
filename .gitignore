@@ -1,10 +1,9 @@
 # Ignore everything
-*
+archive/
+logs/
+models/*
+!models/
+!models/slime_1038.pkl
 
-# But not these files...
-!.gitignore
-!README.md
-!genome_1308.gif
-!requirements.txt
-!neat-python/
-!neat-python/slimevolley_neat.py
+Others
+.DS_Store

@@ -10,7 +10,7 @@ gym==0.26.2  # For running the original (old) SlimeVolley environment (slimevoll
 opencv-python==4.11.0.86
 
 
-## For visulziing slimevoleey
+## For visualizing slimevoleey
 evojax==0.2.17
 imageio==2.37.0
 
