@@ -18,6 +18,23 @@ We use parallel training with 8 workers to speed up the process so that training
 
 ![Network Topology](results/slime_1038_topology.png)
 
+## Game Performance Stats
+
+Results from running the trained agent against the built-in opponent over 1000 games:
+
+### Match Statistics
+
+- Wins: 299 (29.90%)
+- Draws: 545
+- Losses: 156
+
+### Point Statistics
+
+- Points Won: 464 (64.44%)
+- Points Lost: 256
+
+The agent shows strong performance in scoring points (64.44% success rate) while maintaining a positive win-draw-loss record. The high number of draws indicates extended rallies, suggesting good defensive capabilities.
+
 ## Quick Start
 
 1. Create and activate a virtual environment:

@@ -103,6 +103,7 @@ def main():
     print(f"Wins:   {wins}")
     print(f"Draws:  {draws}")
     print(f"Losses: {losses}")
+    print(f"Wins ratio: {wins / N_GAMES:.2%}")
     print(f"\nTotal points:")
     print(f"Won:  {total_won}")
     print(f"Lost: {total_lost}")
