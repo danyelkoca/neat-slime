@@ -9,7 +9,6 @@ import numpy as np
 import imageio
 import networkx as nx
 import matplotlib.pyplot as plt
-from run_neat import Genome, NodeGene, ConnectionGene
 from evojax.task.slimevolley import SlimeVolley
 
 

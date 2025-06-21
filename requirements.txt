@@ -1,21 +1,8 @@
-numpy
-networkx
-psutil
-
-## For cartpole
-gymnasium
-
-## For slime volley
-gym==0.26.2  # For running the original (old) SlimeVolley environment (slimevolley.py)
-opencv-python==4.11.0.86
-
-
-## For visualizing slimevoleey
-evojax==0.2.17
-imageio==2.37.0
-
-# try neat-python. not needed for manual near implementation
-neat-python==0.92  # Only needed for neat_lib_* example scripts
-
-
-# Successfully installed graphviz-0.21
+numpy==2.3.0
+networkx==3.5 # Needed for graph ops: visualization, pruning etc.
+gym==0.26.2 # Needed for train.py as we are using old gym env
+opencv-python==4.11.0.86 # Needed for train.py as we are using old gym env
+evojax==0.2.17 # Needed for test.py and visualize.py for accessing SlimeVolley task (EvoJAX not used in train.py)
+imageio==2.37.0 # Needed for visualize.py (Make gif of a play)
+neat-python==0.92 # Mainly needed for training
+matplotlib==3.10.3 # Needed for plotting fitness with logs (plot+logs)

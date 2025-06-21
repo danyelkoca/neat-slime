@@ -1,5 +1,3 @@
-import sys
-import os
 import pickle
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -306,7 +304,7 @@ def visualize_topology(genome, save_path):
 GENOME_PATH = ()
 if __name__ == "__main__":
     genome_path = "models/slime_1038.pkl"
-    save_path = "graphs/slime_1038_topology.png"
+    save_path = "results/slime_1038_topology.png"
 
     genome = load_genome(genome_path)
     genome = clean_genome(genome)  # Clean before visualizing

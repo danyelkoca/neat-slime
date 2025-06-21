@@ -2,16 +2,17 @@
 Example NEAT implementation for SlimeVolley using neat-python.
 """
 
-import neat
-from neat.parallel import ParallelEvaluator
 import os
 import sys
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+
+import neat
+from neat.parallel import ParallelEvaluator
 import numpy as np
 import gc
 import pickle
 from concurrent.futures import ProcessPoolExecutor
-
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from slimevolley import SlimeVolleyEnv
 import json
 
@@ -121,7 +122,7 @@ models = {}
 
 def run_slimevolley():
 
-    config_path = os.path.join(os.path.dirname(__file__), "./slimevolley.ini")
+    config_path = "slimevolley.ini"
     config = neat.Config(
         neat.DefaultGenome,
         neat.DefaultReproduction,

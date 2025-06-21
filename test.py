@@ -77,7 +77,7 @@ def parallel_eval_games(genome, config, n_games):
 
 def main():
     # Load configuration
-    config_path = os.path.join(os.path.dirname(__file__), "./slimevolley.ini")
+    config_path = "slimevolley.ini"
     config = neat.Config(
         neat.DefaultGenome,
         neat.DefaultReproduction,
@@ -87,7 +87,7 @@ def main():
     )
 
     # Load the saved genome
-    genome_path = "/Users/danyelkoca/Desktop/projects/neat-slime/neat-python/models/slime_1038.pkl"
+    genome_path = "models/slime_1038.pkl"
 
     with open(genome_path, "rb") as f:
         genome = pickle.load(f)
